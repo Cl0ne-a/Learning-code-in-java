@@ -1,0 +1,28 @@
+//We are going to find the area of triangle
+//Previously, we interact with the application in order to input the side ssizes
+
+import java.util.SortedMap;
+import java.util.Scanner;
+
+public class TriangleSquare {
+    public static void main(String[] args) {
+        System.out.println("We are going to calculate the area of Triangle. ");
+        System.out.println("Please input the size of side a:");
+        Scanner a = new Scanner(System.in);
+        double sideA = a.nextDouble();
+
+        System.out.println("Please input the size of side b:");
+        Scanner b = new Scanner(System.in);
+        double sideB = b.nextDouble();
+
+        System.out.println("Please input the size of side c:");
+        Scanner c = new Scanner(System.in);
+        double sideC = c.nextDouble();
+
+
+        double halfPerimetr = (sideA+sideB+sideC)/2;
+        double area = Math.sqrt(halfPerimetr);
+
+        System.out.println("The area of your tringle is: " +area);
+    }
+}
