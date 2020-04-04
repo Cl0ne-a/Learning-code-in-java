@@ -1,0 +1,28 @@
+//Input 5-digit number
+//Print them out in a cloumn
+
+import java.util.Scanner;
+
+public class digitToScreen {
+    public static void main(String[] args) {
+        System.out.println("Input number");
+        Scanner myInput = new Scanner(System.in);
+        int fromScreen = myInput.nextInt();
+
+        System.out.println("My number is " + fromScreen);
+
+        int a = fromScreen/10000;
+        int b = fromScreen%10000/1000;
+        int c = fromScreen%1000/100;
+        int d = fromScreen%100/10;
+        int e = fromScreen%10;
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+
+
+    }
+}
