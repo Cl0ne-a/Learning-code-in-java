@@ -1,0 +1,19 @@
+//We will find the Area of circle. 
+//Data: We will be prompted to input the radius  
+
+import java.util.Scanner;
+
+import static java.lang.StrictMath.PI;
+
+
+public class RoundArea {
+    public static void main(String[] args) {
+        System.out.println("We are going to calculate the area of circle/");
+        System.out.println("What is the diametr of your circle? (Please, input below)");
+        Scanner radius = new Scanner(System.in);
+        double r = radius.nextDouble();
+
+        double areaOfCircle = PI*r*r;
+
+        System.out.println("Area of your Circle is: " + areaOfCircle);
+    }
