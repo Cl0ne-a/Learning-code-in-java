@@ -1,0 +1,22 @@
+package com.protonmail.unit10;
+
+import java.util.Scanner;
+
+public class PointInCircle {
+    public static void main(String[] args) {
+        Scanner point = new Scanner(System.in);
+
+        System.out.println("You need to check, if the point belongs to the circle with R of 4." +
+                "Input coordinates. Press ENTER to continue.");
+        int x = point.nextInt();
+        int y = point.nextInt();
+        int R = 16;
+
+
+        if (R >= ((x * x) + (y * y))) {
+            System.out.println("Point belongs to the system");
+        } else {
+            System.out.println("Point does not belong to the system.");
+        }
+    }
+}
