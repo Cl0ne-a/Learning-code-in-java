@@ -1,0 +1,17 @@
+package com.protonmail.unit10;
+
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        System.out.println("Input year please and press ENTER:");
+        Scanner Year = new Scanner(System.in);
+        int y = Year.nextInt();
+
+        if ((y%4==0)||(y%400==0)){
+            System.out.println("This is a Leap Year");
+        } else {
+            System.out.println("This is an ordinary year - 365 days");
+        }
+    }
+}
