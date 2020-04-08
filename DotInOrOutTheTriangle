@@ -1,0 +1,68 @@
+package com.protonmail.unit10;
+
+import java.util.Scanner;
+
+public class PointInTriangle {
+    public static void main(String[] args) {
+        System.out.println("Dot D has coordinates of xD and yD. Input coordinates.");
+        Scanner coordinates = new Scanner(System.in);
+        double xD = coordinates.nextDouble();
+        double yD = coordinates.nextDouble();
+
+        int xA = 0;
+        int yA = 0;
+
+        int xB = 4;
+        int yB = 4;
+
+        int xC = 6;
+        int yC = 1;
+
+        //ABC - initial triangle
+        double AB = Math.sqrt((xB - xA) * (xB - xA) + (yB - yA) * (yB - yA)); //sides by formula sqrt((X2-X1)^2 + (y2-y1)^2)
+        double BC = Math.sqrt((xC - xB) * (xC - xB) + (yC - yB) * (yC - yB));
+        double CA = Math.sqrt((xA - xC) * (xA - xC) + (yA - yC) * (yA - yC));
+        double p = (AB + BC + CA) / 2;
+        double areaTriangle = Math.sqrt(p * (p - AB) * (p - BC) * (p - CA));
+        System.out.println("ABC:" + areaTriangle);
+
+        //ABD - small triangle
+        //double AB = Math.sqrt((xB - xA) * (xB - xA) + (yB - yA) * (yB - yA)); //sides by formula sqrt((X2-X1)^2 + (y2-y1)^2)
+        double DB = Math.sqrt((xB - xD) * (xB - xD) + (yB - yD) * (yB - yD));
+        double DA = Math.sqrt((xD - xA) * (xD - xA) + (yD - yA) * (yD - yA));
+        double pABD = (AB + DB + DA) / 2;
+        double areaTriangleABD = Math.sqrt(pABD * (pABD - AB) * (pABD - DB) * (pABD - DA));
+        System.out.println("ABD:" + areaTriangleABD);
+
+        //DBC small triangle
+
+        //   double DB = Math.sqrt((xB - xD) * (xB - xD) + (yB - yD) * (yB - yD));
+        //  double BC = Math.sqrt((xC - xB)*(xC - xB)+(yC - yB)*(yC - yB));
+        double CD = Math.sqrt((xC - xD) * (xC - xD) + (yC - yD) * (yC - yD));
+        double pDBC = (DB + BC + CD) / 2;
+        double areaTriangleDBC = Math.sqrt(pDBC * (pDBC - DB) * (pDBC - BC) * (pDBC - CD));
+        System.out.println("DBC:" + areaTriangleDBC);
+
+
+        //ADC small triangle
+        //double DA = Math.sqrt((xD - xA) * (xD - xA) + (yD - yA) * (yD - yA));
+        //double DC = Math.sqrt((xC - xD) * (xC - xD) + (yC - yD) * (yC - yD));
+        //double CA = Math.sqrt((xA - xC)*(xA - xC)+(yA - yC)*(yA - yC));
+        double pADC = (DA + CD + CA) / 2;
+        double areaTriangleADC = Math.sqrt(pADC * (pADC - DA) * (pADC - CD) * (pADC - CA));
+        System.out.println("ADC:" + areaTriangleADC);
+
+        //Check if area of initial ABC triangle is bigger or equal to sum of areas of ABD, DBC and ADC triangles.
+        // Areas of three triangles:
+        // areaTriangleABD
+        // areaTriangleDBC
+        // areaTriangleADC
+
+        double sumTriangles = (areaTriangleABD + areaTriangleDBC + areaTriangleADC);
+
+        if (sumTriangles <= areaTriangle) {
+            System.out.println("Dot with input coordinates belongs to the area of Triangle withing given coordinates");
+        } else System.out.println("Input Dot (" + xD + "; " + yD+") doesn't belong to the area of the triangle.");
+    }
+
+}
