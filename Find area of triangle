@@ -21,7 +21,7 @@ public class TriangleSquare {
 
 
         double halfPerimetr = (sideA+sideB+sideC)/2;
-        double area = Math.sqrt(halfPerimetr);
+        double area = Math.sqrt((halfPerimetr)*(halfPerimetr-sideA)*(halpfPerimetr-sideB)*(halfPerimetr-sideC));
 
         System.out.println("The area of your tringle is: " +area);
     }
